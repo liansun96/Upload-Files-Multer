@@ -5,6 +5,10 @@ const express = require('express')
 const app = express()
 const connectDB = require('./db/connect')
 
+const productRouter = require('./routes/productRoutes')
+
+app.use(express.json())
+app.use('/api/v1/products/' , productRouter)
 
 app.get('/' , (req , res) => {
     res.send('Yooooo! This is multer file upload section')
