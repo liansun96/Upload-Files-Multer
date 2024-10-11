@@ -8,10 +8,16 @@ const imageInputDOM = document.querySelector('#image')
 const containerDOM = document.querySelector('.container')
 let imageValue;
 
-imageInputDOM.addEventListener('change',(e)=>{
- const file = e.target.files[0];
- console.log(file);
-})
+// imageInputDOM.addEventListener('change',(e)=>{
+//  const file = e.target.files[0];
+//  console.log(file);
+// })
+
+
+
+
+
+
 
 imageInputDOM.addEventListener('change',async (e)=>{
  const imageFile = e.target.files[0];
@@ -31,22 +37,20 @@ imageInputDOM.addEventListener('change',async (e)=>{
 })
 
 
-
 fileFormDOM.addEventListener('submit',async (e)=>{
-  e.preventDefault()
-  const nameValue = nameInputDOM.value;
-  const priceValue = priceInputDOM.value;
-  try {
-   
-   const product = {name:nameValue,price:priceValue,image:imageValue}
-   
-    await axios.post(url,product);
-    fetchProducts()
-  } catch (error) {
-   console.log(error);
-  }
-  })
-  
+e.preventDefault()
+const nameValue = nameInputDOM.value;
+const priceValue = priceInputDOM.value;
+try {
+ 
+ const product = {name:nameValue,price:priceValue,image:imageValue}
+ 
+  await axios.post(url,product);
+  fetchProducts()
+} catch (error) {
+ console.log(error);
+}
+})
 
 
 
