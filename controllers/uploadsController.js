@@ -15,7 +15,7 @@ const uploadProductImageLocal = async (req, res) => {
   if (!productImage.mimetype.startsWith('image')) {
     throw new CustomError.BadRequestError('Please Upload Image');
   }
-  // console.log(productImage, productImage.mimetype);
+  console.log(productImage, productImage.mimetype);
   
 
   const maxSize = 1024 * 1024;
